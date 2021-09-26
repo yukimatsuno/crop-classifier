@@ -1,74 +1,25 @@
-# Data analysis
-- Document here the project: business_opt_in_agriculture
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Crop Classifier
+Crop classifier using machine learning
 
-Please document the project the better you can.
+# Overview
+Machine learning model which classifies satelite imagery between rice fields and sugarcane fields.
 
-# Startup the project
+## Data
+- 10,000 segmented satelite imagery taken by Sentinel 2
+- Rice field in Vietnam vs. sugarcane field in Thailand
+- Imagery has 13 bands: visible (red, green, blue), NIR, red edge, SWIR, and atmospheric bands
+- Sample of field imagery (Image of each band and numeric info)
+![image](https://user-images.githubusercontent.com/79320522/134799239-12eb3860-e619-4679-b4a1-162caeac6c4a.png)
 
-The initial setup.
+## Feture Engineering
+Combined bands numeric data following the link : [gisgeography](https://gisgeography.com/sentinel-2-bands-combinations/)
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+## Learning curve
+![image](https://user-images.githubusercontent.com/79320522/134799508-49db46c4-dcce-4f5c-8d3b-f8ac83c853cd.png)
 
-Unittest test:
-```bash
-make clean install test
-```
+## Model
+- Achieved accuracy of 95%
+- Train method: KNN
 
-Check for business_opt_in_agriculture in gitlab.com/{group}.
-If your project is not set please add it:
-
-- Create a new project on `gitlab.com/{group}/business_opt_in_agriculture`
-- Then populate it:
-
-```bash
-##   e.g. if group is "{group}" and project_name is "business_opt_in_agriculture"
-git remote add origin git@github.com:{group}/business_opt_in_agriculture.git
-git push -u origin master
-git push -u origin --tags
-```
-
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-business_opt_in_agriculture-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/business_opt_in_agriculture` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/business_opt_in_agriculture.git
-cd business_opt_in_agriculture
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-business_opt_in_agriculture-run
-```
+## App
+[SKY CROP] (http://skycrop.herokuapp.com/)
